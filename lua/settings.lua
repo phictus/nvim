@@ -4,6 +4,9 @@ local o = vim.opt
 -- leader key
 g.mapleader = " "
 
+-- assembly syntax
+g.asmsyntax = "fasm"
+
 -- disable netrw at the very start of your init.lua (strongly advised)
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
@@ -79,5 +82,5 @@ o.cinoptions = { "Ls", "g0", ":0", "N-s", "E-s", "(s", "m1" }
 o.shortmess:append("S")
 
 -- Spell Checker
-o.spell = true
-o.spelllang = "en_us"
+-- o.spell = true
+-- o.spelllang = "en_us"

@@ -12,15 +12,14 @@ map("n", "<C-A-d>", "<CMD>Telescope diagnostics<CR>")
 map("n", "<C-A-e>", "<CMD>Telescope file_browser<CR>")
 map("n", "<C-A-s>", "<CMD>Telescope file_browser path=~/.config/nvim/<CR>")
 
+map("n", "<A-b>", "<CMD>Telescope buffers<CR>")
+
 -- Fix * (Keep the cursor position, don"t move to next match)
 map("n", "*", "*N")
 
 -- Fix n and N. Keeping cursor in center
 map("n", "n", "nzz")
 map("n", "N", "Nzz")
-
--- Change buffer
-map("n", "<A-b>", "<CMD>bn<CR>")
 
 -- Delete buffer
 map("n", "<C-b>", "<CMD>bd<CR>")

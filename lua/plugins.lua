@@ -38,7 +38,7 @@ return {
             require("nvim-treesitter.install").prefer_git = false
             require("nvim-treesitter.install").compilers = {"gcc"}
             require("nvim-treesitter.configs").setup({
-                ensure_installed = {"lua", "vim", "vimdoc", "c", "cpp", "c_sharp", "rust", "asm"},
+                ensure_installed = {"lua", "vim", "vimdoc", "c", "cpp", "rust", "asm"},
                 highlight = {enable = true, additional_vim_regex_highlighting = false}
             })
         end
@@ -145,12 +145,11 @@ return {
 
             require("mason").setup()
             require("mason-lspconfig").setup({
-                ensure_installed = {"lua_ls", "clangd", "omnisharp", "rust_analyzer"}
+                ensure_installed = {"lua_ls", "clangd", "rust_analyzer"}
             })
 
             lspconfig.lua_ls.setup({capabilities = capabilities})
             lspconfig.clangd.setup({capabilities = capabilities})
-            lspconfig.omnisharp.setup({capabilities = capabilities})
             lspconfig.rust_analyzer.setup({capabilities = capabilities})
         end
     }
