@@ -38,7 +38,7 @@ return {
             require("nvim-treesitter.install").prefer_git = false
             require("nvim-treesitter.install").compilers = {"clang"}
             require("nvim-treesitter.configs").setup({
-                ensure_installed = {"lua", "vim", "vimdoc", "c", "cpp", "rust", "asm"},
+                ensure_installed = {"lua", "vim", "vimdoc", "make", "cmake", "c", "cpp", "rust", "asm"},
                 highlight = {enable = true, additional_vim_regex_highlighting = false}
             })
         end
@@ -149,7 +149,17 @@ return {
             })
 
             lspconfig.lua_ls.setup({capabilities = capabilities})
-            lspconfig.clangd.setup({capabilities = capabilities})
+
+            lspconfig.clangd.setup({
+                capabilities = capabilities,
+                cmd = {
+                    "clangd",
+                    "--background-index",
+                    "--clang-tidy",
+                    "--header-insertion=never"
+                }
+            })
+
             lspconfig.rust_analyzer.setup({capabilities = capabilities})
         end
     }
