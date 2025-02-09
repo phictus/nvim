@@ -36,7 +36,7 @@ return {
 
         config = function()
             require("nvim-treesitter.install").prefer_git = false
-            require("nvim-treesitter.install").compilers = {"gcc"}
+            require("nvim-treesitter.install").compilers = {"clang"}
             require("nvim-treesitter.configs").setup({
                 ensure_installed = {"lua", "vim", "vimdoc", "c", "cpp", "rust", "asm"},
                 highlight = {enable = true, additional_vim_regex_highlighting = false}

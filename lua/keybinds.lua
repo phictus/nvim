@@ -6,13 +6,11 @@ end
 map("n", "<Tab>", "<CMD>lua require(\"luasnip\").jump(1)<CR>")
 
 -- Telescope keybindings
-map("n", "<C-A-f>", "<CMD>Telescope find_files find_command=rg,--hidden,--files<CR>")
-map("n", "<C-A-w>", "<CMD>Telescope live_grep<CR>")
-map("n", "<C-A-d>", "<CMD>Telescope diagnostics<CR>")
-map("n", "<C-A-e>", "<CMD>Telescope file_browser<CR>")
-map("n", "<C-A-s>", "<CMD>Telescope file_browser path=~/.config/nvim/<CR>")
-
-map("n", "<A-b>", "<CMD>Telescope buffers<CR>")
+map("n", "<Leader>ff", "<CMD>Telescope find_files find_command=rg,--files<CR>")
+map("n", "<Leader>fs", "<CMD>Telescope live_grep<CR>")
+map("n", "<Leader>fd", "<CMD>Telescope diagnostics<CR>")
+map("n", "<Leader>h", "<CMD>Telescope file_browser<CR>")
+map("n", "<Leader>b", "<CMD>Telescope buffers<CR>")
 
 -- Fix * (Keep the cursor position, don"t move to next match)
 map("n", "*", "*N")
@@ -20,10 +18,6 @@ map("n", "*", "*N")
 -- Fix n and N. Keeping cursor in center
 map("n", "n", "nzz")
 map("n", "N", "Nzz")
-
--- Delete buffer
-map("n", "<C-b>", "<CMD>bd<CR>")
-map("n", "<C-A-b>", "<CMD>bd!<CR>")
 
 map("n", "<C-\\>", "<CMD>vertical resize +2<CR>")
 map("n", "<A-\\>", "<CMD>horizontal resize +2<CR>")
