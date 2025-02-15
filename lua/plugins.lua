@@ -1,22 +1,14 @@
 return {
     -- THEME
     {
-        "AlexvZyl/nordic.nvim",
+        "EdenEast/nightfox.nvim",
         lazy = false,
         priority = 1000,
 
         dependencies = {"nvim-tree/nvim-web-devicons"},
 
         config = function()
-            require('nordic').setup({
-                italic_comments = true,
-                telescope = {
-                    -- Available styles: `classic`, `flat`.
-                    style = 'flat',
-                },
-                ts_context = {dark_background = true}
-            })
-            require('nordic').load()
+            vim.cmd("colorscheme terafox")
 
             require("nvim-web-devicons").setup({
                 color_icons = true,
