@@ -4,16 +4,8 @@ return {
         "EdenEast/nightfox.nvim",
         lazy = false,
 
-        dependencies = {"nvim-tree/nvim-web-devicons"},
-
         config = function()
             vim.cmd("colorscheme terafox")
-
-            require("nvim-web-devicons").setup({
-                color_icons = true,
-                default = true,
-                strict = true
-            })
         end
     },
 
@@ -54,6 +46,8 @@ return {
     {
         "nvim-lualine/lualine.nvim",
 
+        dependencies = {"nvim-tree/nvim-web-devicons"},
+
         config = function()
             require("lualine").setup({
                 options = {
@@ -92,13 +86,13 @@ return {
     -- AUTOCOMPLETE
     {
         "saghen/blink.cmp",
-        dependencies = "rafamadriz/friendly-snippets",
         version = "*",
+
+        dependencies = {"rafamadriz/friendly-snippets"},
+
         opts = {
             keymap = {preset = "enter"},
-            cmdline = {
-                keymap = {preset = "super-tab"}
-            },
+            cmdline = {enabled = false},
             appearance = {
                 nerd_font_variant = "normal"
             }

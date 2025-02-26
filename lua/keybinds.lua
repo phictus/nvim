@@ -9,15 +9,19 @@ map("n", "<Leader>fd", "<CMD>Telescope diagnostics<CR>")
 map("n", "<Leader>h", "<CMD>Telescope file_browser<CR>")
 map("n", "<Leader>b", "<CMD>Telescope buffers<CR>")
 
--- Fix * (Keep the cursor position, don"t move to next match)
-map("n", "*", "*N")
+-- Go to definition
+map("n", "<Leader>d", "<CMD>lua vim.lsp.buf.definition()<CR>")
 
 -- Fix n and N. Keeping cursor in center
 map("n", "n", "nzz")
 map("n", "N", "Nzz")
 
-map("n", "<C-\\>", "<CMD>vertical resize +2<CR>")
-map("n", "<A-\\>", "<CMD>horizontal resize +2<CR>")
+-- Exit highlighting in search
+map("n", "<C-n>", "<CMD>noh<CR>");
+
+-- Split stretch
+map("n", "<A-.>", "<C-w>2+")
+map("n", "<A-,>", "<C-w>5>")
 
 -- Exit TERMINAL mode
 map("t", "<Esc>", "<C-\\><C-n>")
