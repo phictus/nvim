@@ -3,7 +3,6 @@ return {
     {
         "EdenEast/nightfox.nvim",
         lazy = false,
-        priority = 1000,
 
         dependencies = {"nvim-tree/nvim-web-devicons"},
 
@@ -90,50 +89,37 @@ return {
         end
     },
 
+    -- AUTOCOMPLETE
+    {
+        "saghen/blink.cmp",
+        dependencies = "rafamadriz/friendly-snippets",
+        version = "*",
+        opts = {
+            keymap = {preset = "enter"},
+            cmdline = {
+                keymap = {preset = "super-tab"}
+            },
+            appearance = {
+                nerd_font_variant = "normal"
+            }
+        },
+        opts_extend = {"sources.default"}
+    },
+
     -- LANGUAGE SERVER
     {
         "neovim/nvim-lspconfig",
         lazy = false,
-        priority = 100,
 
         dependencies = {
-            "hrsh7th/nvim-cmp",
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
-
-            "L3MON4D3/LuaSnip",
-            "saadparwaiz1/cmp_luasnip",
-
+            "saghen/blink.cmp",
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim"
         },
 
         config = function()
-            local cmp = require("cmp")
-            cmp.setup({
-                snippet = {
-                    expand = function(args)
-                        require("luasnip").lsp_expand(args.body)
-                    end
-                },
-                mapping = cmp.mapping.preset.insert({
-                    ["<Tab>"] = cmp.mapping.select_next_item(),
-                    ["<CR>"] = cmp.mapping.confirm({select = true})
-                }),
-                sources = cmp.config.sources(
-                    {
-                        {name = "nvim_lsp"},
-                        {name = "luasnip"}
-                    },
-                    {
-                        {name = "buffer"}
-                    }
-                )
-            })
-
             local lspconfig = require("lspconfig")
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local capabilities = require("blink.cmp").get_lsp_capabilities();
 
             require("mason").setup()
             require("mason-lspconfig").setup({

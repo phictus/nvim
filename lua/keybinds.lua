@@ -2,9 +2,6 @@ local function map(m, k, v)
     vim.keymap.set(m, k, v, {silent = true})
 end
 
--- LuaSnip Arguments
-map("n", "<Tab>", "<CMD>lua require(\"luasnip\").jump(1)<CR>")
-
 -- Telescope keybindings
 map("n", "<Leader>ff", "<CMD>Telescope find_files find_command=rg,--files<CR>")
 map("n", "<Leader>fs", "<CMD>Telescope live_grep<CR>")
