@@ -19,6 +19,9 @@ map("n", "N", "Nzz")
 -- Exit highlighting in search
 map("n", "<C-n>", "<CMD>noh<CR>");
 
+-- Delete buffer
+map("n", "<Leader>d", "<CMD>bp|bd#<CR>")
+
 -- Split stretch
 map("n", "<A-.>", "<C-w>2+")
 map("n", "<A-,>", "<C-w>5>")
