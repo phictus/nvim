@@ -56,9 +56,9 @@ return {
                 },
                 sections = {
                     lualine_a = {"mode"},
-                    lualine_b = {"nvim_treesitter#statusline"},
+                    lualine_b = {"filename"},
                     lualine_c = {"searchcount"},
-                    lualine_x = {"filename"},
+                    lualine_x = {"filetype"},
                     lualine_y = {"encoding"},
                     lualine_z = {"location"}
                 },
