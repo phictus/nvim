@@ -3,14 +3,14 @@ local function map(m, k, v)
 end
 
 -- Telescope keybindings
-map("n", "<Leader>ff", "<CMD>Telescope find_files find_command=rg,--files<CR>")
-map("n", "<Leader>fs", "<CMD>Telescope live_grep<CR>")
-map("n", "<Leader>fd", "<CMD>Telescope diagnostics<CR>")
-map("n", "<Leader>h", "<CMD>Telescope file_browser<CR>")
-map("n", "<Leader>b", "<CMD>Telescope buffers<CR>")
+map("n", "<Leader>gf", "<CMD>Telescope find_files find_command=rg,--files<CR>")
+map("n", "<Leader>gs", "<CMD>Telescope live_grep<CR>")
+map("n", "<Leader>gb", "<CMD>Telescope buffers<CR>")
+map("n", "<Leader>b", "<CMD>Telescope file_browser<CR>")
+map("n", "<Leader>d", "<CMD>Telescope diagnostics<CR>")
 
 -- Go to definition
-map("n", "<Leader>d", "<CMD>lua vim.lsp.buf.definition()<CR>")
+map("n", "<Leader>gd", "<CMD>lua vim.lsp.buf.definition()<CR>")
 
 -- Fix n and N. Keeping cursor in center
 map("n", "n", "nzz")
@@ -20,7 +20,7 @@ map("n", "N", "Nzz")
 map("n", "<C-n>", "<CMD>noh<CR>");
 
 -- Delete buffer
-map("n", "<Leader>d", "<CMD>bp|bd#<CR>")
+map("n", "<Leader>q", "<CMD>bp|bd#<CR>")
 
 -- Split stretch
 map("n", "<A-.>", "<C-w>2+")
