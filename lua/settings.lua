@@ -7,16 +7,16 @@ g.mapleader = " "
 -- assembly syntax
 g.asmsyntax = "fasm"
 
--- disable netrw at the very start of your init.lua (strongly advised)
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
-
 -- Doesn"t show --INSERT-- and --VISUAL--
 o.showmode = false
 
 -- Theme
 o.termguicolors = true
 o.background = "dark" -- or "light" for light mode
+
+-- Disable Netrw
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
 -- Do not save when switching buffers
 -- o.hidden = true

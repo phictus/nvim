@@ -33,12 +33,23 @@ return {
         branch = "0.1.x",
 
         dependencies = {
-            "nvim-telescope/telescope-file-browser.nvim",
             "nvim-lua/plenary.nvim"
         },
+    },
+
+    -- FILE BROWSER
+    {
+        "stevearc/oil.nvim",
+        lazy = false,
+
+        dependencies = {"nvim-tree/nvim-web-devicons"},
 
         config = function()
-            require("telescope").load_extension("file_browser")
+            require("oil").setup({
+                view_options = {
+                    show_hidden = true
+                }
+            })
         end
     },
 
@@ -56,10 +67,10 @@ return {
                 },
                 sections = {
                     lualine_a = {"mode"},
-                    lualine_b = {"filename"},
-                    lualine_c = {"searchcount"},
-                    lualine_x = {"filetype"},
-                    lualine_y = {"encoding"},
+                    lualine_b = {"searchcount"},
+                    lualine_c = {},
+                    lualine_x = {},
+                    lualine_y = {},
                     lualine_z = {"location"}
                 },
                 inactive_sections = {
