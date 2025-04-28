@@ -1,12 +1,12 @@
 return {
     -- THEME
     {
-        "AlexvZyl/nordic.nvim",
+        "EdenEast/nightfox.nvim",
         lazy = false,
         priority = 1000,
 
         config = function()
-            require("nordic").load()
+            vim.cmd("colorscheme terafox")
         end
     },
 
