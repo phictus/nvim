@@ -9,8 +9,6 @@ return {
         priority = 1000,
 
         config = function()
-            g.gruvbox_material_foreground = "mix"
-            g.gruvbox_material_background = "soft"
             cmd.colorscheme("gruvbox-material")
         end
     },
